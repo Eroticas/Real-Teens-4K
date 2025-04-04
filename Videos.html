@@ -3,81 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RealTeens - Tube Site UI</title>
+    <title>RealTeens</title>
     <style>
+        /* Body Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #F7D400; /* Default yellowish font color */
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #F7D400;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
+
+        /* Header Styles */
         header {
-            background-color: #1C1C1C; /* Slightly lighter dark background */
-            color: #FF6F00; /* Orange font color for header */
-            padding: 15px;
+            background: linear-gradient(135deg, #FF6F00, #F7D400);
+            color: white;
+            padding: 25px 0;
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 3rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
+
         header h1 {
             margin: 0;
         }
+
+        /* Main Container for Video Cards */
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
+            gap: 20px;
         }
+
+        /* Video Card Styles */
         .video-card {
-            background-color: #1F1F1F; /* Dark card background */
-            border-radius: 8px;
+            background-color: #1F1F1F;
+            border-radius: 12px;
             overflow: hidden;
             width: 300px;
-            margin: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            height: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
             cursor: pointer;
-            transform: translateY(0);
+            position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
         }
+
+        /* Thumbnail Image */
         .video-card img {
             width: 100%;
-            height: 180px;
+            height: 60%;
             object-fit: cover;
+            transition: opacity 0.3s ease;
         }
+
+        /* Title Styling */
         .video-card h3 {
-            padding: 10px;
             margin: 0;
-            background-color: #FF6F00; /* Orange background for title */
+            padding: 15px;
+            background: linear-gradient(135deg, #FF6F00, #F7D400);
             color: white;
             font-size: 18px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
+        /* Description Text */
         .video-card p {
-            padding: 10px;
+            padding: 0 15px;
             font-size: 14px;
-            color: #F7D400; /* Yellowish text for descriptions */
+            color: #F7D400;
         }
+
+        /* Hover Effects */
         .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
         }
+
+        /* Overlay on hover */
         .video-card .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.2));
             opacity: 0;
-            transition: opacity 0.3s ease;
-            border-radius: 8px;
+            transition: opacity 0.4s ease;
+            border-radius: 12px;
         }
-        .video-card:hover .overlay {
-            opacity: 1;
-        }
+
+        /* Overlay text */
         .video-card .overlay-text {
             position: absolute;
             top: 50%;
@@ -86,7 +108,35 @@
             color: #F7D400;
             font-size: 24px;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Show overlay text on hover */
+        .video-card:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Media Queries for Responsive Layout */
+        @media (max-width: 768px) {
+            .container {
+                justify-content: space-around;
+                padding: 10px;
+            }
+            .video-card {
+                width: 100%;
+                max-width: 350px;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 2rem;
+                padding: 20px 0;
+            }
+            .video-card h3 {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -94,6 +144,7 @@
 
 <header>
     <h1>RealTeens</h1>
+    <p>Your Entertainment Hub</p>
 </header>
 
 <div class="container">
@@ -103,62 +154,34 @@
             <div class="overlay-text">Watch Now</div>
         </div>
         <h3>VideoPack 1</h3>
-        
+        <p>A thrilling video pack for your entertainment!</p>
     </div>
+
     <div class="video-card" onclick="redirectToVideo('https://urgentlyrightypast.com/zzyqigmnc?key=e7e605a2023a3b6334f2752ca3a4c66c')">
         <img src="https://via.placeholder.com/300x180?text=Video+2" alt="Video Thumbnail">
         <div class="overlay">
             <div class="overlay-text">Watch Now</div>
         </div>
-        <h3>Videopack 2</h3>
-
+        <h3>VideoPack 2</h3>
+        <p>Exciting content to enjoy, click now!</p>
     </div>
+
     <div class="video-card" onclick="redirectToVideo('https://urgentlyrightypast.com/zzyqigmnc?key=e7e605a2023a3b6334f2752ca3a4c66c')">
         <img src="https://via.placeholder.com/300x180?text=Video+3" alt="Video Thumbnail">
         <div class="overlay">
             <div class="overlay-text">Watch Now</div>
         </div>
-        <h3>Videopack 3</h3>
-
+        <h3>VideoPack 3</h3>
+        <p>Action-packed, don't miss out!</p>
     </div>
+
     <div class="video-card" onclick="redirectToVideo('https://urgentlyrightypast.com/zzyqigmnc?key=e7e605a2023a3b6334f2752ca3a4c66c')">
         <img src="https://via.placeholder.com/300x180?text=Video+4" alt="Video Thumbnail">
         <div class="overlay">
             <div class="overlay-text">Watch Now</div>
         </div>
-        <h3>Videopack 4</h3>
-    </div>
-      <div class="video-card" onclick="redirectToVideo('https://urgentlyrightypast.com/zzyqigmnc?key=e7e605a2023a3b6334f2752ca3a4c66c')">
-        <img src="https://via.placeholder.com/300x180?text=Video+3" alt="Video Thumbnail">
-        <div class="overlay">
-            <div class="overlay-text">Watch Now</div>
-        </div>
-        <h3>Videopack 5</h3>
-
-    </div>
-      <div class="video-card" onclick="redirectToVideo('https://urgentlyrightypast.com/zzyqigmnc?key=e7e605a2023a3b6334f2752ca3a4c66c')">
-        <img src="https://via.placeholder.com/300x180?text=Video+3" alt="Video Thumbnail">
-        <div class="overlay">
-            <div class="overlay-text">Watch Now</div>
-        </div>
-        <h3>Videopack 6</h3>
-
-    </div>
-      <div class="video-card" onclick="redirectToVideo('https://urgentlyrightypast.com/zzyqigmnc?key=e7e605a2023a3b6334f2752ca3a4c66c')">
-        <img src="https://via.placeholder.com/300x180?text=Video+3" alt="Video Thumbnail">
-        <div class="overlay">
-            <div class="overlay-text">Watch Now</div>
-        </div>
-        <h3>Videopack 7</h3>
-
-    </div>
-      <div class="video-card" onclick="redirectToVideo('https://urgentlyrightypast.com/zzyqigmnc?key=e7e605a2023a3b6334f2752ca3a4c66c')">
-        <img src="https://via.placeholder.com/300x180?text=Video+3" alt="Video Thumbnail">
-        <div class="overlay">
-            <div class="overlay-text">Watch Now</div>
-        </div>
-        <h3>Videopack 8</h3>
-
+        <h3>VideoPack 4</h3>
+        <p>New and hot content for you!</p>
     </div>
 </div>
 
@@ -173,4 +196,5 @@
     }
 </script>
 
-</body
+</body>
+</html>
